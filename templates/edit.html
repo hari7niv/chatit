@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>🕸️chatit</title>
+{% endblock %}
+
+
+{% block body %}
+<h1>Edit your post</h1>
+
+<hr>
+<h1>Edit Post:</h1>
+<form action="/post/edit/{{post.id}}" method="POST">
+
+        <div class="form-floating">
+            <input type="text" name="content" id="content" class="form-control" value="{{post.content}}">
+        </div>
+        
+        <div class="btn btn-primary">
+            <button class="btn btn-primary" type="submit" value="save">Submit</button>
+        </div>
+
+</form>
+<hr>
+
+{% endblock %}

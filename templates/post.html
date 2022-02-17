@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>🕸️chatit</title>
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<hr>
+<h1>create new post:</h1>
+<form action="/post" method="POST">
+    <div class="form-floating">
+            <input type="text" name="content" id="content" class="form-control" >
+    </div>
+
+    <div class="btn btn-primary">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+
+</form>
+<hr>
+
+{% for post in posts %}
+{{user}}
+<h4>{{post.content}}</h4>
+<a href="/post/delete/{{post.id}}" class="btn btn-primary">Delete</a>
+<a href="/post/edit/{{post.id}}" class="btn btn-primary">edit</a>
+<hr>
+{% endfor %}
+{% endblock %}
